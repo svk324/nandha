@@ -1,101 +1,171 @@
-import Image from "next/image";
+import React from "react";
+import FeaturesSection from "@/app/FeaturesSection";
+import FAQSection from "@/app/FAQSection";
+import FooterSection from "@/app/Footer";
+import SuccessCreationSteps from "@/app/SuccessCreationSteps";
 
-export default function Home() {
+const HeaderSection: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <div className="bg-white">
+        <header className="bg-[#FCF8F1] bg-opacity-30">
+          <div className="px-4 mx-auto sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16 lg:h-20">
+              <div className="flex-shrink-0">
+                <a href="#" title="" className="flex">
+                  <img
+                      className="w-auto h-8"
+                      src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg"
+                      alt="Logo"
+                  />
+                </a>
+              </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+              <button
+                  type="button"
+                  className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+              >
+                <svg
+                    className="block w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                  <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 8h16M4 16h16"
+                  ></path>
+                </svg>
+
+                <svg
+                    className="hidden w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                  <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+
+              <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
+                <a
+                    href="#"
+                    title=""
+                    className="text-base text-black transition-all duration-200 hover:text-opacity-80"
+                >
+                  Features
+                </a>
+
+                <a
+                    href="#"
+                    title=""
+                    className="text-base text-black transition-all duration-200 hover:text-opacity-80"
+                >
+                  Solutions
+                </a>
+
+                <a
+                    href="#"
+                    title=""
+                    className="text-base text-black transition-all duration-200 hover:text-opacity-80"
+                >
+                  Resources
+                </a>
+
+                <a
+                    href="#"
+                    title=""
+                    className="text-base text-black transition-all duration-200 hover:text-opacity-80"
+                >
+                  Pricing
+                </a>
+              </div>
+
+              <a
+                  href="#"
+                  title=""
+                  className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-white bg-black rounded-full"
+                  role="button"
+              >
+                Join Now
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <section className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-base font-semibold tracking-wider text-blue-600 uppercase">
+                  A social media for learners
+                </p>
+                <h1 className="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-8xl">
+                  Connect & learn from the experts
+                </h1>
+                <p className="mt-4 text-base text-black lg:mt-8 sm:text-xl">
+                  Grow your career fast with right mentor.
+                </p>
+
+                <a
+                    href="#"
+                    title=""
+                    className="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400"
+                    role="button"
+                >
+                  Join for free
+                  <svg
+                      className="w-6 h-6 ml-8 -mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                  >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </a>
+
+                <p className="mt-5 text-gray-600">
+                  Already joined us?{" "}
+                  <a
+                      href="#"
+                      title=""
+                      className="text-black transition-all duration-200 hover:underline"
+                  >
+                    Log in
+                  </a>
+                </p>
+              </div>
+
+              <div>
+                <img
+                    className="w-full"
+                    src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/1/hero-img.png"
+                    alt="Hero"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <FeaturesSection />
+        <FAQSection />
+        <SuccessCreationSteps />
+        <FooterSection />
+      </div>
   );
-}
+};
+
+export default HeaderSection;
