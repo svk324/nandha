@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const FooterSection = () => {
@@ -92,9 +93,24 @@ const FooterSection = () => {
                     </div>
                 </div>
 
-                <hr className="mt-16 mb-10 border-gray-200" />
-
-                <p className="text-sm text-center text-gray-600">© Copyright 2021, All Rights Reserved by Postcraft</p>
+                <div className="mt-12 pt-8 border-t">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} LearnHub. All rights reserved.
+            </p>
+            <div className="flex gap-4">
+              <Link href="/accessibility" className="text-sm text-muted-foreground hover:text-foreground">
+                Accessibility
+              </Link>
+              <Link href="/sitemap" className="text-sm text-muted-foreground hover:text-foreground">
+                Sitemap
+              </Link>
+              <Link href="/cookies" className="text-sm text-muted-foreground hover:text-foreground">
+                Cookie Settings
+              </Link>
+            </div>
+          </div>
+        </div>
             </div>
         </section>
     );
